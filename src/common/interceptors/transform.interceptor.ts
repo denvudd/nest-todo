@@ -8,16 +8,15 @@ import { instanceToInstance } from 'class-transformer';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-
 export interface Response<T> {
-  data: T,
+  data: T;
 }
 
 @Injectable()
 export class TransformInterceptor<T>
-implements NestInterceptor<T, Response<T>>
+  implements NestInterceptor<T, Response<T>>
 {
-  intercept (
+  intercept(
     context: ExecutionContext,
     next: CallHandler,
   ): Observable<Response<T>> {

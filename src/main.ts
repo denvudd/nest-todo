@@ -7,8 +7,7 @@ import { AppModule } from './app.module';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
 import { QueryFailedExceptionFilter } from './common/typeorm/exception-filters/query-failed-exception.filter';
 
-
-async function bootstrap () {
+async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.enableCors({
